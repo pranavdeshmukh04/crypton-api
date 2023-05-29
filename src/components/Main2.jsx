@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import millify from "millify";
 import { Link } from 'react-router-dom'
@@ -11,11 +10,29 @@ const Main2 = () => {
   // const globalStats = data?.data?.coins;
   useEffect(() =>{
     setCoins(data?.data?.coins);
+    const circular_slider = document.querySelector('.wrapper'),
+    slides = document.querySelectorAll('.slides'),
+    images = document.querySelectorAll('.slides img');
+    slides.forEach((slide, i) => {
+        slide.onclick = () => {
+            if(i === 0){
+              circular_slider.style.transform = `rotateZ(+${360 / 7}deg)`;
+            } else{
+              circular_slider.style.transform = `rotateZ(-${360 / 7 * (i-1)}deg)`;
+            }
+            images.forEach((img, i) => {
+                img.style.setProperty('--img-no', 2);
+                img.classList.remove('active');
+
+            })
+        slide.querySelector('img').classList.add('active');
+        }
+    })
   },[data?.data?.coins]);
   if(isFetching) return 'Loading...';
   return (
     <>
-      <div className="main">
+      <div className="main flex-center">
           <div className="main-text">
             <span>
               <h1>WE MAKE CRYPTO <br></br>CLEAR AND SIMPLE</h1>
@@ -23,14 +40,14 @@ const Main2 = () => {
               <h3>TRACK AND TRADE CRYPTO CURRENCIES</h3>
             </span>
           </div>
-          <div className="circular-slider">
-            <ul className="wrapper">
+          <div className="circular-slider flex-center">
+            <ul className="wrapper flex-center">
               {
-                maincryptodata.map(data => {
+                maincryptodata.map((data, index) => {
                   return(
                     <>
-                      <li className="slides">
-                        <img src={data.image} alt="" width='110px' height='100px'/>
+                      <li className="slides" style={{ '--img-no': index + 1 }}>
+                        <img src={data.image} alt="" className={data.class}/>
                       </li> 
                     </>
                   )
@@ -60,6 +77,7 @@ const Main2 = () => {
           </div> */}
       </div>
     </>
+    
   )
 }
 
