@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <>
+    <div className='navbar-container'>
     <div className='navbar'>
       <div className='navbar-logo'>
-        <Link to='/'><h1>CRYPTON</h1></Link>
+        <Link to='/'><img src="https://i.ibb.co/cXZ7hLf/Screenshot-2023-06-27-135906.png" alt=""/></Link>
       </div>
       <ul>
         <Link to='/'><li>HOME</li></Link>
@@ -22,7 +22,7 @@ const Navbar = () => {
         <li><InstagramIcon color="" fontSize="large"/></li>
       </ul>
     </div>
-    </>
+    </div>
   )
 }
 

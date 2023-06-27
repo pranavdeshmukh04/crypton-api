@@ -3,6 +3,10 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 import millify from "millify";
 import { Link } from 'react-router-dom'
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from "swiper";
+import 'swiper/css';
+import "swiper/css/pagination";
 import maincryptodata from "../data"
 const Main2 = () => {
   const { data, isFetching } = useGetCryptosQuery(4);
@@ -30,6 +34,7 @@ const Main2 = () => {
     })
   },[data?.data?.coins]);
   if(isFetching) return 'Loading...';
+
   return (
     <>
       <div className="main flex-center">
@@ -40,7 +45,7 @@ const Main2 = () => {
               <h3>TRACK AND TRADE CRYPTO CURRENCIES</h3>
             </span>
           </div>
-          <div className="circular-slider flex-center">
+          {/* <div className="circular-slider flex-center">
             <ul className="wrapper flex-center">
               {
                 maincryptodata.map((data, index) => {
@@ -54,27 +59,27 @@ const Main2 = () => {
                 })
               }
             </ul>
-          </div>
-          {/* <div className='main-crypto-wrapper'>
-            {
-              coins?.map(coin => {
-                const isPositive = coin.change > 0;
-                return(
-                  <div key={coin.uuid}>
-                  <Link to={`/coin/${coin.uuid}`}>
-                    <div className='main-crypto'>
-                        <div className='main-crypto-img'>
-                          <img src={coin.iconUrl} alt={coin.name} width='110px' height='100px'/>
-                        </div>
-                        <span className='main-crypto-name'>{coin.name}<span className='main-crypto-change'style={{ color: isPositive ? '#0ecb81' : 'red' }}>{coin.change}%</span></span>
-                        <span className='main-crypto-price'>$ {millify(coin.price,{ precision: 3})}</span>
-                    </div>
-                  </Link>
-                  </div>
-                );
-              })
-            }
           </div> */}
+          <Swiper      
+            slidesPerView={3}
+            spaceBetween={10}
+            loop={true}
+            direction="circular"
+            className="swiper-container"
+          >
+            <div className="swiper-wrapper">
+            {
+                maincryptodata.map((data, index) => {
+                  return(
+                    <>
+                      <SwiperSlide key={index} className="swiper-slide">
+                      </SwiperSlide> 
+                    </>
+                  )
+                })
+              }
+            </div>
+          </Swiper>
       </div>
     </>
     

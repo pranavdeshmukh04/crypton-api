@@ -3,7 +3,7 @@
     --half-slider-height: calc(var(--slider-height)/2);
 }
 *{
-    background: #0B0B0F;
+
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,6 +11,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     list-style: none;
+}
+body{
+    background: #000011;
+    
 }
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -20,15 +24,18 @@ h1, h2, h3, li, span{
     color: white;
 }
 /*NAVBAR*/
+.navbar-container{
+    
+}
 .navbar{
-    margin-top: 1.5rem;
     background: none;
     display: flex;
 	align-items: center;
 	justify-content:space-around;
 }
-.navbar-logo h1{
-    margin: 0;
+.navbar-logo img{
+    padding-top: 2rem;
+    width: 30vh;
 }
 .navbar ul{
     padding: 0;
@@ -55,10 +62,14 @@ a, a:link {
 .main{
     display: flex;
 	flex-wrap: wrap;
-
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
 }
 .main-text{
-    margin:10vh;
+    margin:10vh 0 10vh 10vh;
+
 }
 .main-text span{
     display: flex;
@@ -68,10 +79,9 @@ a, a:link {
 }
 .main-text h1, .main-text h3{
     margin: 0;
-
 }
 .main-text h1{
-    font-size: 9vh;
+    font-size: 10vh;
     -webkit-background-clip: text;
     
     background-image: linear-gradient(80deg,#2600fc,#ff00ea);
@@ -81,8 +91,17 @@ a, a:link {
     /* background-image: linear-gradient(80deg,#0099F7,#F11712); */
 }
 .main-text h3{
-    font-size: 3.5vh;
+    font-size: 4vh;
+}
+.main-image{
+    display: flex;
+    flex-direction: row;
+    margin: 5vh 0 0 15vh;
     
+    filter: drop-shadow(5px 5px 5px #2600fc);
+}
+.main-image img{
+    height: 80vh;
 }
 .main-crypto-wrapper{
     display: grid;
@@ -91,7 +110,6 @@ a, a:link {
 		4,
 		minmax(200px, 1fr)
 	);
-    margin-bottom: 15vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -119,12 +137,7 @@ a, a:link {
     margin-left: 1vh;
     color: #0ecb81;
 }
-.crypto-feature span{
-    font-family: Space Grotesk,sans-serif;
-    font-weight: 500;
-    font-size: 2rem;
-    color: #b237ff;
-}
+
 
 /* SLIDER */
 .flex-center{
@@ -180,16 +193,126 @@ a, a:link {
     outline: .1rem solid white;
     outline-offset: .5rem; 
 }
-/* FEATURE */
-.crypto-feature h1{
-    font-size: 5vh;
+
+
+.swiper-container {
+    width: var(--slider-height);
+    text-align: center;
+  }
+  .swiper-wrapper{
+    padding: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+  }
+.swiper-slide{
+    width: 14vw;
+    border-radius: 50%;
+}
+.swiper-slide img{
+    width: 100%;
+    border-radius: 50%;
 }
 
+/* FEATURE */
+.img1-feature{
+    display: flex;
+    margin: 10vh 0 0 20vh;
+}
+.img1-feature img{
+    filter: drop-shadow(10px 10px 10px #dd2476);
+    width: 90%;
+    height: auto;
+}
+
+.crypto-feature{
+    margin-bottom: 10vh;
+}
+.crypto-feature h1{
+    font-size: 6vh;
+}
+@media screen and (max-width: 900px) {
+    .crypto-feature{
+        flex-direction: column;
+    }
+}
+.crypto-feature h2{
+    font-size: 2rem;
+    background: none;
+}
+.swiper span{
+    font-family: Space Grotesk,sans-serif;
+    font-size: 2rem;
+    color:black;
+    background: none;
+}
+.swiper {
+    width: 18rem;
+    height: 20rem;
+    background: none;
+}
+.global-stats div{
+    display: flex;
+    align-items: center;
+}
+.global-stats h1{
+    filter: drop-shadow(5px 5px 3px #2600fc);
+    margin: 3vh
+}
+.global-stats img{
+    width: 10vh;
+    height: auto;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 10px); }
+    100%   { transform: translate(0, 0px); }   
+}
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    background: none;
+    padding-top: 3rem;
+}
+.swiper-slide:nth-child(1n) {
+    /* background-image: url(https://i.ibb.co/P1h5T73/pawel-czerwinski-2m4-P67x-WDww-unsplash.jpg); */
+    background-image: url(https://i.ibb.co/CW5B3KV/zoltan-tasi-u-NXmhzc-Qjxg-unsplash.jpg);
+    background-position: center;
+    background-size: 50vh 50vh;
+    box-shadow: inset 0 0 200px 30px #282a2d;
+
+  }
 /* MARKET UPDATE */
 .crypto-marketupdate h1{
-    font-size: 5vh;
+    font-size: 6vh;
 }
-
+.crypto-marketupdate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.crypto-marketupdate h1{
+    filter: drop-shadow(5px 5px 3px #2600fc);
+    margin: 3vh;
+}
+.crypto-marketupdate img{
+    width: 10vh;
+    height: auto;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
 .crypto-coindetails{
     margin-top: 20vh;
 }

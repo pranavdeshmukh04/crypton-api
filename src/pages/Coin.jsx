@@ -16,7 +16,7 @@ const Coin = () => {
       <Box sx={{ display: 'flex', flexGrow: 1}}>
       <Grid container direction="row" justifyContent="center" alignItems="center">
           <Grid container direction="column" xs={3} sx={{textAlign: 'center'}}>
-            <Grid item>
+            <Grid item style={{filter: `dropShadow(5px, 5px, 5px, #2600fc)`}}>
               <img src={cryptoDetails.iconUrl} alt={cryptoDetails.name} width='230px' height='230px'></img>
             </Grid>
             <Grid item>
