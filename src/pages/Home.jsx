@@ -5,7 +5,6 @@ import Features from '../components/Features'
 import MarketUpdates from '../components/MarketUpdate'
 import News from '../components/News'
 import Join from '../components/Join'
-import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -13,7 +12,7 @@ const Home = () => {
       <Main />
       <Features />
       <MarketUpdates />
-      <Footer />
+      <Join />
     </>
   )
 }
