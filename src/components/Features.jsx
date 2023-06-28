@@ -16,7 +16,7 @@ const Features = () => {
   if(isFetching) return 'Loading...';
 
   return (
-    <div className='crypto-feature'>
+    <div className='crypto-feature' id='feature'>
     <Box sx={{ display: 'flex', flexGrow: 1, flexWrap: 'wrap', textAlign: 'center'}}>
       <Grid container spacing={0} direction="row" justifyContent="center" alignItems="center">
         <Grid item xs={4}>

@@ -11,7 +11,7 @@ const columns = [
   {
     field: 'name',
     headerName: 'NAME',
-    width: 150,
+    width: 200,
     headerAlign: 'center',
     headerClassName: 'class-header',
     align: 'center'
@@ -89,7 +89,7 @@ const Marketupdate = () => {
       [`& .${gridClasses.row}.even`]: {
 
         borderRadius: '10px',
-        margin: '0.5vh 0 0.5vh 0',
+
         fontWeight: 'bold',
         backgroundColor: '#3b486a',
         '&:hover, &.Mui-hovered': {
@@ -114,7 +114,7 @@ const Marketupdate = () => {
     }));
 
   return (
-    <div className='crypto-marketupdate'>
+    <div className='crypto-marketupdate' id='market'>
       <div className="crypto-marketupdate-header">
         <img src="https://i.ibb.co/68nZLFY/bitcoin.png" alt=""/>
         <h1>MARKET UPDATE</h1>
@@ -124,7 +124,7 @@ const Marketupdate = () => {
       <Box sx={{
         display: 'flex', 
         flexGrow: 1, textAlign: 'center', 
-        height: "91vh", width: '100%',
+        height: "86vh", width: '100%',
         '& .class-header':{
           fontWeight: 'bold',
           color: '#8484d4',

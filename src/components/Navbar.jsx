@@ -1,7 +1,7 @@
 import React from 'react'
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { Link } from 'react-router-dom'
+import { HashLink as Link} from 'react-router-hash-link';
 
 const Navbar = () => {
   return (
@@ -12,10 +12,10 @@ const Navbar = () => {
       </div>
       <ul>
         <Link to='/'><li>HOME</li></Link>
-        <li>FEATURES</li>
-        <li>MARKET</li>
-        <li>NEWS</li>
-        <li>JOIN US</li>
+        <Link to='/#feature' smooth><li>FEATURES</li></Link>
+        <Link to='/#market' smooth><li>MARKET</li></Link>
+        <Link to='/#news' smooth><li>NEWS</li></Link>
+        <Link to='/#join' smooth><li>JOIN US</li></Link>
       </ul>
       <ul>
         <li><TwitterIcon color="" fontSize="large"/></li>
