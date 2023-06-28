@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useGetCryptosQuery } from '../services/cryptoApi';
-import millify from "millify";
-import { Link } from 'react-router-dom'
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from "swiper";
 import 'swiper/css';
 import "swiper/css/pagination";
 import maincryptodata from "../data"

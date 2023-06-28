@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Box from '@mui/material/Box';
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { DataGrid, gridClasses } from '@mui/x-data-grid';
 import { useGetStatsQuery } from '../services/cryptoApi';
 import millify from "millify";
