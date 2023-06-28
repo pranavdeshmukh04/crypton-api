@@ -12,10 +12,10 @@ const Navbar = () => {
       </div>
       <ul>
         <Link to='/'><li>HOME</li></Link>
-        <Link to='/#feature' smooth><li>FEATURES</li></Link>
-        <Link to='/#market' smooth><li>MARKET</li></Link>
-        <Link to='/#news' smooth><li>NEWS</li></Link>
-        <Link to='/#join' smooth><li>JOIN US</li></Link>
+        <Link to='/features' smooth><li>STATISTICS</li></Link>
+        <Link to='/marketupdates' smooth><li>MARKET</li></Link>
+        <Link to='/news' smooth><li>NEWS</li></Link>
+        <Link to='/join' smooth><li>JOIN US</li></Link>
       </ul>
       <ul>
         <li><TwitterIcon color="" fontSize="large"/></li>

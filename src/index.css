@@ -22,6 +22,25 @@ code {
 h1, h2, h3, li, span{
     color: white;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    color: transparent;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(80deg,#2600fc,#ff00ea);
+    color: transparent;
+    /* background-image: linear-gradient(80deg,#3a1c71,#d76d77, #ffaf7b); */
+    /* background-image: linear-gradient(80deg,#ff512f,#dd2476); */
+    /* background-image: linear-gradient(80deg,#0099F7,#F11712, #FFFFFF); */
+}
 /*NAVBAR*/
 .navbar-container{
     
@@ -89,6 +108,11 @@ a, a:link {
     /* background-image: linear-gradient(80deg,#ff512f,#dd2476); */
     /* background-image: linear-gradient(80deg,#0099F7,#F11712, #FFFFFF); */
 }
+@keyframes rainbow { 
+    0%{background-position:left}
+    50%{background-position:right}
+    100%{background-position:left}
+  }
 .main-text h3{
     font-size: 4vh;
 }
@@ -96,8 +120,11 @@ a, a:link {
     display: flex;
     flex-direction: row;
     margin: 5vh 0 0 15vh;
-    
     filter: drop-shadow(0px 0px 60px #2600fc);
+}
+.main-image:hover{
+    transform: translateY(-10px) scale(1.05) translateZ(0);
+    transition: ease-in-out 0.3s;
 }
 .main-image img{
     height: 80vh;
@@ -110,6 +137,7 @@ a, a:link {
 		minmax(200px, 1fr)
 	);
 }
+
 
 @media screen and (max-width: 768px) {
     .main-crypto-wrapper {
@@ -131,6 +159,14 @@ a, a:link {
     align-items: center;
 	justify-content: space-between;
 	white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 5%;
+}
+.main-crypto:hover{
+    transform: translateY(-10px) scale(1.005) translateZ(0);
+    transition: ease-in-out 0.4s;
+    box-shadow: rgba(38, 0, 252, 0.4) 5px 5px, rgba(38, 0, 252, 0.3) 10px 10px, rgba(255, 0, 234, 0.2) 15px 15px, rgba(255, 0, 234, 0.1) 20px 20px, rgba(255, 0, 234, 0.05) 25px 25px;
+    /* box-shadow: rgba(38, 0, 252, 0.4) 0px 5px, rgba(38, 0, 252, 0.3) 0px 10px, rgba(255, 0, 234, 0.2) 0px 15px, rgba(255, 0, 234, 0.1) 0px 20px, rgba(255, 0, 234, 0.05) 0px 25px; */
 }
 .main-crypto-change{
     margin-left: 1vh;
@@ -224,7 +260,10 @@ a, a:link {
     width: 100%;
     height: auto;
 }
-
+.img1-feature:hover{
+    transform: translateY(-10px) scale(1.05) translateZ(0);
+    transition: ease-in-out 0.3s;
+}
 .crypto-feature{
     margin-bottom: 10vh;
 }
@@ -300,6 +339,7 @@ a, a:link {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 10vh;
 }
 .crypto-marketupdate-header{
     display: flex;
@@ -318,12 +358,117 @@ a, a:link {
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
-.marketupdate-table{
-    
-}
+
 .crypto-coindetails{
     margin-top: 20vh;
 }
 .crypto-coindetails a:link{
     text-decoration: none;
 }
+
+/* JOIN */
+.cryto-join{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.cryto-join > * {
+    width:calc(100% / 3);
+    padding:1rem;
+}
+.crypto-join-text{
+    text-align: center;
+}
+.crypto-join-text h1{
+    font-size: 8vh;
+    margin: 0;
+}
+.crypto-join-text h1 > span{
+    font-size: 12vh;
+    -webkit-background-clip: text;
+    
+    /* background-image: linear-gradient(80deg,#2600fc,#ff00ea); */
+    color: transparent;
+    /* background-image: linear-gradient(80deg,#3a1c71,#d76d77, #ffaf7b); */
+    background-image: linear-gradient(80deg,#ff512f,#dd2476);
+    /* background-image: linear-gradient(80deg,#0099F7,#F11712, #FFFFFF); */
+}
+.crypto-join-text img{
+    position: relative;
+    top: 1.5rem;
+    width: 10vh;
+    height: auto;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.custom-btn {
+    width: 12rem;
+    height: 4rem;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+    margin: 5vh;
+  }
+  .btn {
+    border: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .btn:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     background-color: #1fd1f9;
+  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    background: transparent;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    color: #fff;
+  }
+  .btn:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  }
+  .crypto-join-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .crypto-join-img:hover{
+    transform: translateY(-10px) scale(1.03) translateZ(0);
+    transition: ease-in-out 0.3s;
+    background: none;
+}
+  .crypto-join-img img{
+    width: 60%;
+    filter: drop-shadow(0px 0px 60px #fcac00);
+  }
